@@ -1,0 +1,16 @@
+{
+  "name": "RitnCharacters",
+  "version": "0.2.5",
+  "title": "RitnCharacters",
+  "author": "Ritn",
+  "description": "Change your character ! // Changer votre personnage !",
+  "factorio_version": "1.1",
+  "dependencies":[
+    "base >= 1.1",
+    "RitnLib >= 0.4.1",
+    "GirlCharacter",
+    "AmongUsCharacter",
+    "shrek",
+    "IRobot >= 1.1.1"
+	]
+}

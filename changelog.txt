@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.2.5
+Date: 02.08.2021
+  Adds:
+    - Compatible avec le mod : Shrek.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 11.03.2021
+  Notes:
+    - Correction du changelog.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 10.03.2021
+  Changes:
+    - Compatible avec le mod : IRobot.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 03.03.2021
+  Changes:
+    - Standardisation du code.
+    - Mise en place du "core" pour standardisation du code.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 28.02.2021
+  Fixes:
+    - Bug fix sur la fonction "load_all_inventory" de inventory.lua
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 24.02.2021
+  Changes:
+    - Automatisation de l'ajout des nouveau personnage dans le GUI.
+  Adds:
+    - Ajout de personnage "Robot" (compilatron) - Adaptation du mod : "IRobot".
+    - Ajout de "Among Us Characters".
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 24.02.2021
+  Changes:
+    - Migration du code gui en "fonction local".
+    - Passage du GUI en "local".
+    - Révision de la sauvegarde d'inventaire.
+    - Skip de l'intro.
+    - Mise en place du site de crash.
+    - Adaptation avec RitnTeleportation.
+  Notes:
+    - Passage en 1.1 du jeu.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 05.09.2020
+  Changes:
+    - Passage en 1.0.0 du jeu
+  Fixes:
+    - Bug fix : lié au passage de la 1.0.0
+---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 13.07.2020
+  Fixes:
+    - Bug fix : Si vous aviez choisis homme, après une mort vous respawné en femme.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 13.07.2020
+  Fixes:
+    - l'inventaire de départ est sauvegardé.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 09.07.2020
+  Adds:
+    - Permet de charger soit le personnage de base, soit le personnage du mod GirlCharacters
