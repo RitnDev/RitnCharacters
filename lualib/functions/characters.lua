@@ -1,9 +1,7 @@
 ---------------------------------------------------------------------------------------------
 -- Fonction "CHARACTER"
 ---------------------------------------------------------------------------------------------
-local libMod = "__RitnLib__"
-local ritnlib = {}
-ritnlib.inventory =     require(libMod .. ".lualib.inventory")
+ritnlib.inventory =     require(ritnlib.defines.inventory)
 ---------------------------------------------------------------------------------------------
 local ritnGui = {}
 ritnGui.menu =          require("lualib.gui.menu")
