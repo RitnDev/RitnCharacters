@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 01.02.2022
+  Major Features:
+    - Compatibilité avec tous les mods ajoutant des personnages.
+    - Intégration à RitnCoreGame.
+  Gui:
+    - Nouveau GUI de sélection du personnage.
+  Scripting:
+    - Standardisation du code selon RitnLib 0.7
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 01.02.2022
   Adds:
