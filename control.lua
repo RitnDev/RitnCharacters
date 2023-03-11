@@ -1,5 +1,3 @@
--- Global
-require("core.globals")
 -- defines
 if not ritnlib then require("__RitnLib__/defines") end
 require("__RitnCoreGame__.core.defines")

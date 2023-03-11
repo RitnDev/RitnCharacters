@@ -25,6 +25,7 @@ end)
 
 
 function RitnCharacter:change(index_character)
+    if index_character == 0 then return self end
     local inventories = {}
     local rInventory = RitnInventory(self.player, inventories)
     rInventory:save(true)

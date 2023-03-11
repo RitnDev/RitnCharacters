@@ -11,6 +11,10 @@ local function on_player_created(e)
     local rEvent = RitnEvent(e)
     local rPlayer = rEvent:getPlayer()
 
+    if script.level.campaign_name ~= nil then return end
+    if script.level.level_name == "wave-defense" then return end
+    if script.level.level_name == "pvp" then return end
+        
     RitnGuiChanger(e):action_open()
 end
 

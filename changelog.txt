@@ -1,6 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 11.03.2022
+  Minor Features:
+    - Création du fichier 'globals' charger à l'étape 'control'.
+    - Prise en compte du mod sur une partie déjà commencer, au chargement d'une sauvegarde.
+    - Prise en compte du mod dans les scénarios par défaut.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
-Date: 01.02.2022
+Date: 10.03.2022
   Major Features:
     - Compatibilité avec tous les mods ajoutant des personnages.
     - Intégration à RitnCoreGame.

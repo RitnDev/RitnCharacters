@@ -25,6 +25,7 @@ defines.class = {
 -- Modules
 defines.modules = {
     core = dir .. ".core.modules",
+    globals = dir .. ".modules.globals",
     events = dir .. ".modules.events",
     interfaces = dir .. ".modules.interfaces",
     ----
