@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 11.03.2022
+  Changes:
+    - modules 'events:on_init_mod()' : add_character -> rename update.
+    - ajout d'un 'on_configuration_changed' pour actualiser la liste des personnages.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 11.03.2022
   Minor Features:

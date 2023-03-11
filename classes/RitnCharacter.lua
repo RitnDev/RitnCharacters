@@ -67,8 +67,10 @@ end
 
 
 function RitnCharacter:check()
-    if self.character.name ~= self:get() then
-        self:change(self.data.character.index)
+    if self.character then
+        if self.character.name ~= self:get() then
+            self:change(self.data.character.index)
+        end
     end
 end
 

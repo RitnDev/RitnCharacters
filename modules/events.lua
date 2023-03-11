@@ -4,26 +4,22 @@
 local RitnGuiChanger = require(ritnlib.defines.characters.class.guiChanger)
 ---------------------------------------------------------------------------------------------
 
-local function on_init_mod()
-    log('RitnCharacters -> on_init !')
 
-    remote.call("RitnCoreGame", "add_param_data", "player", "character", {
-        index = 0,
-        name = {"character-name.none"},
-        skin = 'character'
-    })
-    ----
+local function init_characters()
+    -- prepare options characters list
     local options = remote.call("RitnCoreGame", "get_options")
     options.characters = {}
     remote.call("RitnCoreGame", "set_options", options)
-    ----
 
+    -- add characters on list
     for _,entity in pairs(game.entity_prototypes) do
         if entity.type == "character" then 
             local skin = entity.name
-            local name = string.gsub(entity.name, '-', '')
-            name = string.gsub(name, '_', '')
+            local name = string.gsub(entity.name, '-skin', '')
+            name = string.gsub(name, '-', ' ')
+            name = string.gsub(name, '_', ' ')
             name = string.gsub(name, 'skin', '')
+            name = string.gsub(name, 'character', '')
             name = string.gsub(name, 'Skin', '')
             if string.sub(name, 1, string.len("genshinimpact")) == "genshinimpact" then 
                 name = string.gsub(name, 'genshinimpact', '')
@@ -37,9 +33,22 @@ local function on_init_mod()
             end
         end
     end
+end
+
+
+local function on_init_mod()
+    log('RitnCharacters -> on_init !')
+    ---------------------------------------------
+    remote.call("RitnCoreGame", "add_param_data", "player", "character", {
+        index = 0,
+        name = {"character-name.none"},
+        skin = 'character'
+    })
+    ---------------------------------------------
+    init_characters()
+    ---------------------------------------------
     log('on_init : RitnCharacters -> finish !')
 end
- 
 
 
 local function on_lua_shortcut(e) 
@@ -47,6 +56,7 @@ local function on_lua_shortcut(e)
 end
 -------------------------------------------
 script.on_init(on_init_mod)
+script.on_configuration_changed(init_characters)
 -------------------------------------------
 local events = { events = {} }
 events.events[defines.events.on_lua_shortcut] = on_lua_shortcut
