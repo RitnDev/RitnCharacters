@@ -1,6 +1,6 @@
 if not ritnlib then require("__RitnLib__/defines") end
 require("core.defines")
-
+require(ritnlib.defines.fonts) -- FONTS
 -- sprite du shortcut
 local sprite_icon_shortcut = {
     type = "sprite",
