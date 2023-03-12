@@ -15,7 +15,7 @@ if global.characters == nil then
             ["among-us-character-skin"] = "Among Us",
             ["minime_character_dummy"] = "",
         },
-        version = "1.2.3"
+        version = ritnlib.defines.characters.version
     }
 end
 

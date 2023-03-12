@@ -3,8 +3,6 @@
 ---------------------------------------------------------------------------------------------
 local RitnGuiChanger = require(ritnlib.defines.characters.class.guiChanger)
 ---------------------------------------------------------------------------------------------
-
-
 local function init_characters()
     -- prepare options characters list
     local options = remote.call("RitnCoreGame", "get_options")
@@ -42,7 +40,7 @@ local function on_init_mod()
     remote.call("RitnCoreGame", "add_param_data", "player", "character", {
         index = 0,
         name = {"character-name.none"},
-        skin = 'character'
+        skin = 'character',
     })
     ---------------------------------------------
     init_characters()
@@ -65,10 +63,11 @@ local function on_configuration_changed()
                 ["among-us-character-skin"] = "Among Us",
                 ["minime_character_dummy"] = "",
             },
-            version = "1.2.3"
+            version = ritnlib.defines.characters.version
         }
     end
     init_characters()
+    global.characters.version = version_define
 end
 
 

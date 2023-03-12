@@ -14,7 +14,7 @@ local RitnCharacter = class.newclass(libPlayer, function(base, LuaPlayer)
     base.object_name = "RitnCharacter"
     ----
     local players = remote.call("RitnCoreGame", "get_players")
-    base.data = players[base.index]   
+    base.data = players[base.index]
     ----
     local options = remote.call("RitnCoreGame", "get_options")
     base.characters = options.characters
@@ -30,8 +30,39 @@ function RitnCharacter:change(index_character)
     local rInventory = RitnInventory(self.player, inventories)
     rInventory:save(true)
     ----
+    local data_character = {}
+    data_character.character_additional_mining_categories = self.character.character_additional_mining_categories
+    data_character.character_build_distance_bonus = self.character.character_build_distance_bonus
+    data_character.character_crafting_speed_modifier = self.character.character_crafting_speed_modifier
+    data_character.character_health_bonus = self.character.character_health_bonus
+    data_character.character_inventory_slots_bonus = self.character.character_inventory_slots_bonus
+    data_character.character_item_drop_distance_bonus = self.character.character_item_drop_distance_bonus
+    data_character.character_loot_pickup_distance_bonus = self.character.character_loot_pickup_distance_bonus
+    data_character.character_maximum_following_robot_count_bonus = self.character.character_maximum_following_robot_count_bonus
+    data_character.character_mining_speed_modifier = self.character.character_mining_speed_modifier
+    data_character.character_personal_logistic_requests_enabled = self.character.character_personal_logistic_requests_enabled
+    data_character.character_reach_distance_bonus = self.character.character_reach_distance_bonus
+    data_character.character_resource_reach_distance_bonus = self.character.character_resource_reach_distance_bonus
+    data_character.character_running_speed_modifier = self.character.character_running_speed_modifier
+    data_character.character_trash_slot_count_bonus = self.character.character_trash_slot_count_bonus
+    ----
     self:destroy()
     self.player.create_character(self.characters[index_character].skin)
+    ----
+    self.player.character.character_additional_mining_categories = data_character.character_additional_mining_categories
+    self.player.character.character_build_distance_bonus = data_character.character_build_distance_bonus
+    self.player.character.character_crafting_speed_modifier = data_character.character_crafting_speed_modifier
+    self.player.character.character_health_bonus = data_character.character_health_bonus
+    self.player.character.character_inventory_slots_bonus = data_character.character_inventory_slots_bonus
+    self.player.character.character_item_drop_distance_bonus = data_character.character_item_drop_distance_bonus
+    self.player.character.character_loot_pickup_distance_bonus = data_character.character_loot_pickup_distance_bonus
+    self.player.character.character_maximum_following_robot_count_bonus = data_character.character_maximum_following_robot_count_bonus
+    self.player.character.character_mining_speed_modifier = data_character.character_mining_speed_modifier
+    self.player.character.character_personal_logistic_requests_enabled = data_character.character_personal_logistic_requests_enabled
+    self.player.character.character_reach_distance_bonus = data_character.character_reach_distance_bonus
+    self.player.character.character_resource_reach_distance_bonus = data_character.character_resource_reach_distance_bonus
+    self.player.character.character_running_speed_modifier = data_character.character_running_speed_modifier
+    self.player.character.character_trash_slot_count_bonus = data_character.character_trash_slot_count_bonus
     ----
     rInventory:load(true)
     ----
