@@ -35,8 +35,18 @@ end)
 
 function RitnGuiChanger:create()
     if self.gui[1][self.gui_name.."-"..self.main_gui] then return self end
+    log("> "..self.object_name..":create()")
+    local selecter = 0 
     local character = RitnCharacter(self.player):get()
-    local selecter = character.index
+    if character == nil then 
+        log("> "..self.object_name..":create() -> not character (player)")
+        character = {
+            index = 0,
+            name = {"character-name.none"},
+            skin = "character",
+        }
+    end
+    selecter = character.index
     if selecter == 0 then selecter = 1 end
 
     local element = fGui.getElement(self.gui_name)
@@ -96,6 +106,7 @@ end
 
 function RitnGuiChanger:on_lua_shortcut()   
     if self.shortcut == "ritnmods-characters-menu" then 
+        log("> "..self.object_name..":on_lua_shortcut()")
         self:action_open()
     end
     return self

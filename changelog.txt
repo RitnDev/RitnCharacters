@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.5
+Date: 12.03.2022
+  Bugfixes:
+    - Integration d'une migration si le mod était déjà présent avec une ancienne version (character a nil value).
+---------------------------------------------------------------------------------------------------
 Version: 1.2.4
 Date: 12.03.2022
   Optimizations:
