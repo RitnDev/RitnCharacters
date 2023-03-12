@@ -14,7 +14,8 @@ if global.characters == nil then
             ["IRobot_character_skin"] = "Robot",
             ["among-us-character-skin"] = "Among Us",
             ["minime_character_dummy"] = "",
-        }
+        },
+        version = "1.2.3"
     }
 end
 

@@ -51,12 +51,33 @@ local function on_init_mod()
 end
 
 
+local function on_configuration_changed()
+    if global.players ~= nil then global = {} end
+    if global.characters == nil then 
+        global.characters = { 
+            modules = {
+                player = true,
+            },
+            names = {
+                ["character"] = {"character-name.Man"},
+                ["GearGirl-skin"] = {"character-name.Woman"},
+                ["IRobot_character_skin"] = "Robot",
+                ["among-us-character-skin"] = "Among Us",
+                ["minime_character_dummy"] = "",
+            },
+            version = "1.2.3"
+        }
+    end
+    init_characters()
+end
+
+
 local function on_lua_shortcut(e) 
     RitnGuiChanger(e):on_lua_shortcut()
 end
 -------------------------------------------
 script.on_init(on_init_mod)
-script.on_configuration_changed(init_characters)
+script.on_configuration_changed(on_configuration_changed)
 -------------------------------------------
 local events = { events = {} }
 events.events[defines.events.on_lua_shortcut] = on_lua_shortcut
