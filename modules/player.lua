@@ -7,7 +7,8 @@ local RitnCharacter = require(ritnlib.defines.characters.class.character)
 
 
 local function on_player_created(e) 
-    if global.characters.modules.player == false then return end
+    if global.characters.modules.player.complete == false then return end
+    if global.characters.modules.player.on_player_created == false then return end
     local rEvent = RitnEvent(e)
     local rPlayer = rEvent:getPlayer()
 
@@ -21,14 +22,14 @@ end
 
 
 local function on_gui_click(e) 
-    if global.characters.modules.player == false then return end
+    if global.characters.modules.player.complete == false then return end
     RitnGuiChanger(e):on_gui_click()
 end
 
 
 
 local function on_player_respawned(e)
-    if global.characters.modules.player == false then return end
+    if global.characters.modules.player.complete == false then return end
     RitnCharacter(RitnEvent(e).player):check()
 end
 

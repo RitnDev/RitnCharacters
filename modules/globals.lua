@@ -6,7 +6,11 @@ local RitnGuiChanger = require(ritnlib.defines.characters.class.guiChanger)
 if global.characters == nil then 
     global.characters = { 
         modules = {
-            player = true,
+            player = {
+                on_player_created = true,
+                complete = true,
+            },
+            on_lua_shortcut = true,
         },
         names = {
             ["character"] = {"character-name.Man"},
@@ -36,16 +40,36 @@ local character_interface = {
 
     --disable modules
     ["disable.module.player"] = function()
-        global.teleporter.modules.player = false
+        global.teleporter.modules.player.complete = false
     end,
-
-    --new characters
+    ["disable.module.on_player_created"] = function()
+        global.teleporter.modules.player.on_player_created = false
+    end,
+    ["disable.module.on_lua_shortcut"] = function()
+        global.teleporter.modules.on_lua_shortcut = false
+    end,
+    
+    --new character
     add_character = function(name, skin) 
         local options = remote.call("RitnCoreGame", "get_options")
         table.insert(options.characters, {
             name = name,
             skin = skin,
         })
+        remote.call("RitnCoreGame", "set_options", options)
+    end,
+    -- remove character
+    remove_character = function(skin) 
+        local options = remote.call("RitnCoreGame", "get_options")
+        local position = 0
+        for index, character in pairs(options.characters) do
+            if character.skin == skin then 
+                position = index
+            end
+        end
+        if position > 0 then 
+            table.remove(options.characters, position)
+        end
         remote.call("RitnCoreGame", "set_options", options)
     end,
 }

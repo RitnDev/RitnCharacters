@@ -65,13 +65,32 @@ local function on_configuration_changed()
             },
             version = ritnlib.defines.characters.version
         }
+    elseif ritnlib.defines.characters.version == "1.2.6" then 
+        log('>>> Migration mod RitnCharacters_1.2.6 <<<')
+        global.characters = { 
+            modules = {
+                player = {
+                    on_player_created = true,
+                    complete = true,
+                },
+                on_lua_shortcut = true,
+            },
+            names = {
+                ["character"] = {"character-name.Man"},
+                ["GearGirl-skin"] = {"character-name.Woman"},
+                ["IRobot_character_skin"] = "Robot",
+                ["among-us-character-skin"] = "Among Us",
+                ["minime_character_dummy"] = "",
+            },
+            version = ritnlib.defines.characters.version
+        }
     end
     init_characters()
-    global.characters.version = version_define
 end
 
 
 local function on_lua_shortcut(e) 
+    if global.characters.modules.on_lua_shortcut == false then return end
     RitnGuiChanger(e):on_lua_shortcut()
 end
 -------------------------------------------

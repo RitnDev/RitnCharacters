@@ -13,7 +13,7 @@ local defines = {}
 defines.name = name
 -- Path to the mod's directory.
 defines.directory = dir
-defines.version = "1.2.4"
+defines.version = "1.2.6"
 
 
 -- classes
