@@ -37,6 +37,12 @@ end
 local function on_init_mod()
     log('RitnCharacters -> on_init !')
     ---------------------------------------------
+    local enemy = remote.call('RitnCoreGame', 'get_enemy')
+    if enemy.force_disable ~= nil then 
+        enemy.force_disable = false
+    end
+    remote.call('RitnCoreGame', "set_enemy", enemy)
+    ---------------------------------------------
     remote.call("RitnCoreGame", "add_param_data", "player", "character", {
         index = 0,
         name = {"character-name.none"},
@@ -50,6 +56,12 @@ end
 
 
 local function on_configuration_changed()
+    local enemy = remote.call('RitnCoreGame', 'get_enemy')
+    if enemy.force_disable == nil then 
+        enemy.force_disable = false
+        remote.call('RitnCoreGame', "set_enemy", enemy)
+    end
+    
     if global.players ~= nil then global = {} end
     if global.characters == nil then 
         global.characters = { 
