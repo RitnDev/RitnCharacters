@@ -1,49 +1,54 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.8
+Date: 04.02.2024
+  Changes:
+    - Optimisations du chargements des fichiers defines.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.7
 Date: 13.01.2024
   Fixes:
     - Migration de la nouvelle configuration dans on_configuration_changed.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.6
-Date: 13.03.2022
+Date: 13.03.2023
   Minor Features:
     - Ajout de nouvelles remote interfaces.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.5
-Date: 12.03.2022
+Date: 12.03.2023
   Bugfixes:
     - Integration d'une migration si le mod était déjà présent avec une ancienne version (character a nil value).
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.4
-Date: 12.03.2022
+Date: 12.03.2023
   Optimizations:
     - Transfert des bonus du personnage lors du changement.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.3
-Date: 12.03.2022
+Date: 12.03.2023
   Bugfixes:
     - Integration d'une migration si le mod était déjà présent avec une ancienne version.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.2
-Date: 12.03.2022
+Date: 12.03.2023
   Bugfixes:
     - Ajout des RitnFont dans 'data'.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.1
-Date: 11.03.2022
+Date: 11.03.2023
   Changes:
     - modules 'events:on_init_mod()' : add_character -> rename update.
     - ajout d'un 'on_configuration_changed' pour actualiser la liste des personnages.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
-Date: 11.03.2022
+Date: 11.03.2023
   Minor Features:
     - Création du fichier 'globals' charger à l'étape 'control'.
     - Prise en compte du mod sur une partie déjà commencer, au chargement d'une sauvegarde.
     - Prise en compte du mod dans les scénarios par défaut.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
-Date: 10.03.2022
+Date: 10.03.2023
   Major Features:
     - Compatibilité avec tous les mods ajoutant des personnages.
     - Intégration à RitnCoreGame.

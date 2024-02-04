@@ -1,12 +1,12 @@
 -----------------------------------------
 --               DEFINES               --
 -----------------------------------------
-if not ritnlib then ritnlib = { defines={} } end
+if not ritnlib then require("__RitnBaseGame__.core.defines") end
+-----------------------------------------
 local name = "RitnCharacters"
 local dir = "__".. name .."__"
 local directory = dir .. "."
-
-
+-----------------------------------------
 local defines = {}
 
 -- Mod ID.
