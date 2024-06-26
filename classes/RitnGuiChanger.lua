@@ -1,39 +1,34 @@
--- RitnGuiChanger
-----------------------------------------------------------------
-local class = require(ritnlib.defines.class.core)
-local libStyle = require(ritnlib.defines.class.gui.style)
-local libGui = require(ritnlib.defines.class.luaClass.gui)
+-- RitnGuiCharacterChanger
 ----------------------------------------------------------------
 local font = ritnlib.defines.names.font
 local fGui = require(ritnlib.defines.characters.gui.changer)
-local RitnCharacter = require(ritnlib.defines.characters.class.character)
 ----------------------------------------------------------------
 --- CLASSE DEFINES
 ----------------------------------------------------------------
-local RitnGuiChanger = class.newclass(libGui, function(base, event)
-    libGui.init(base, event, ritnlib.defines.characters.name, "frame-main")
-    base.object_name = "RitnGuiChanger"
-    base.shortcut = event.prototype_name
+RitnGuiCharacterChanger = ritnlib.classFactory.newclass(RitnLibGui, function(self, event)
+    RitnLibGui.init(self, event, ritnlib.defines.characters.name, "frame-main")
+    self.object_name = "RitnGuiCharacterChanger"
+    self.shortcut = event.prototype_name
     --------------------------------------------------
-    base.gui_name = "changer"
-    base.gui_action = {
-        [base.gui_name] = {
+    self.gui_name = "changer"
+    self.gui_action = {
+        [self.gui_name] = {
             [ritnlib.defines.characters.gui_actions.changer.open] = true,
             [ritnlib.defines.characters.gui_actions.changer.close] = true,
             [ritnlib.defines.characters.gui_actions.changer.select] = true,
         }
     }    
     --------------------------------------------------
-    base.gui = { base.player.gui.center }
+    self.gui = { self.player.gui.center }
     --------------------------------------------------
-    base.content = fGui.getContent()
+    self.content = fGui.getContent()
     --------------------------------------------------
 end)
 
 ----------------------------------------------------------------
 
 
-function RitnGuiChanger:create()
+function RitnGuiCharacterChanger:create()
     if self.gui[1][self.gui_name.."-"..self.main_gui] then return self end
     log("> "..self.object_name..":create()")
     local selecter = 0 
@@ -82,14 +77,14 @@ function RitnGuiChanger:create()
     -- styles guiElement
     content.label.current.caption = {"frame-changer.label-current", character.name}
     ----
-    libStyle(content.frame.main):padding(4)
-    libStyle(content.frame.submain):padding(4):stretchable()
-    libStyle(content.flow.current):padding(4)
-    libStyle(content.label.current):font(font.bold18):width(230)
-    libStyle(content.flow.selecter):padding(4):stretchable()
-    libStyle(content.list):horizontalStretch():maxHeight(500)
-    libStyle(content.flow.dialog):horizontalStretch():topPadding(4):align("right")
-    libStyle(content.button.select):height(30)
+    RitnLibStyle(content.frame.main):padding(4)
+    RitnLibStyle(content.frame.submain):padding(4):stretchable()
+    RitnLibStyle(content.flow.current):padding(4)
+    RitnLibStyle(content.label.current):font(font.bold18):width(230)
+    RitnLibStyle(content.flow.selecter):padding(4):stretchable()
+    RitnLibStyle(content.list):horizontalStretch():maxHeight(500)
+    RitnLibStyle(content.flow.dialog):horizontalStretch():topPadding(4):align("right")
+    RitnLibStyle(content.button.select):height(30)
 
 
     local options = remote.call("RitnCoreGame", "get_options")
@@ -104,7 +99,7 @@ end
 
 ----------------------------------------------------------------
 
-function RitnGuiChanger:on_lua_shortcut()   
+function RitnGuiCharacterChanger:on_lua_shortcut()   
     if self.shortcut == "ritnmods-characters-menu" then 
         log("> "..self.object_name..":on_lua_shortcut()")
         self:action_open()
@@ -116,7 +111,7 @@ end
 -- ACTIONS --
 ----------------------------------------------------------------
 
-function RitnGuiChanger:action_close()   
+function RitnGuiCharacterChanger:action_close()   
     local frame = self.gui[1][self.gui_name.."-"..self.main_gui]
     if frame then frame.destroy() end
     if self.character then 
@@ -126,7 +121,7 @@ function RitnGuiChanger:action_close()
     return self
 end
 
-function RitnGuiChanger:action_open()
+function RitnGuiCharacterChanger:action_open()
     self:action_close()
     if self.controller_name ~= "character" then 
         self.player.print({'msg.no-character', self.controller_name})
@@ -140,7 +135,7 @@ function RitnGuiChanger:action_open()
     return self
 end
 
-function RitnGuiChanger:action_select() 
+function RitnGuiCharacterChanger:action_select() 
     local list = self:getElement("list")
     ----
     local selected_index = list.selected_index
@@ -159,4 +154,4 @@ end
 
 
 ----------------------------------------------------------------
-return RitnGuiChanger
+--return RitnGuiCharacterChanger

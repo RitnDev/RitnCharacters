@@ -1,8 +1,6 @@
 ---------------------------------------------------------------------------------------------
 -- GLOBALS
 ---------------------------------------------------------------------------------------------
-local RitnGuiChanger = require(ritnlib.defines.characters.class.guiChanger)
----------------------------------------------------------------------------------------------
 if global.characters == nil then 
     global.characters = { 
         modules = {
@@ -30,11 +28,11 @@ local character_interface = {
 
     ["gui_action_changer"] = function(action, event)
         if action == ritnlib.defines.characters.gui_actions.changer.open then 
-            RitnGuiChanger(event):action_open()
+            RitnGuiCharacterChanger(event):action_open()
         elseif action == ritnlib.defines.characters.gui_actions.changer.close then 
-            RitnGuiChanger(event):action_close()
+            RitnGuiCharacterChanger(event):action_close()
         elseif action == ritnlib.defines.characters.gui_actions.changer.select then 
-            RitnGuiChanger(event):action_select()
+            RitnGuiCharacterChanger(event):action_select()
         end
     end,
 

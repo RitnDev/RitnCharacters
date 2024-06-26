@@ -1,8 +1,6 @@
 ---------------------------------------------------------------------------------------------
 -- EVENTS
 ---------------------------------------------------------------------------------------------
-local RitnGuiChanger = require(ritnlib.defines.characters.class.guiChanger)
----------------------------------------------------------------------------------------------
 local function init_characters()
     -- prepare options characters list
     local options = remote.call("RitnCoreGame", "get_options")
@@ -103,7 +101,7 @@ end
 
 local function on_lua_shortcut(e) 
     if global.characters.modules.on_lua_shortcut == false then return end
-    RitnGuiChanger(e):on_lua_shortcut()
+    RitnGuiCharacterChanger(e):on_lua_shortcut()
 end
 -------------------------------------------
 script.on_init(on_init_mod)

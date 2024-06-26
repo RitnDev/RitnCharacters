@@ -1,23 +1,16 @@
 -- RitnCharacter
 ----------------------------------------------------------------
-local class = require(ritnlib.defines.class.core)
-local libPlayer = require(ritnlib.defines.class.luaClass.player)
-local RitnInventory = require(ritnlib.defines.class.ritnClass.inventory)
-----------------------------------------------------------------
-
-
-----------------------------------------------------------------
 --- CLASSE DEFINES
 ----------------------------------------------------------------
-local RitnCharacter = class.newclass(libPlayer, function(base, LuaPlayer)
-    libPlayer.init(base, LuaPlayer)
-    base.object_name = "RitnCharacter"
+RitnCharacter = ritnlib.classFactory.newclass(RitnLibPlayer, function(self, LuaPlayer)
+    RitnLibPlayer.init(self, LuaPlayer)
+    self.object_name = "RitnCharacter"
     ----
     local players = remote.call("RitnCoreGame", "get_players")
-    base.data = players[base.index]
+    self.data = players[self.index]
     ----
     local options = remote.call("RitnCoreGame", "get_options")
-    base.characters = options.characters
+    self.characters = options.characters
     --------------------------------------------------
 end)
 
@@ -27,7 +20,7 @@ end)
 function RitnCharacter:change(index_character)
     if index_character == 0 then return self end
     local inventories = {}
-    local rInventory = RitnInventory(self.player, inventories)
+    local rInventory = RitnLibInventory(self.player, inventories)
     rInventory:save(true)
     ----
     local data_character = {}
@@ -116,4 +109,4 @@ function RitnCharacter:update()
 end
 
 ----------------------------------------------------------------
-return RitnCharacter
+--return RitnCharacter
