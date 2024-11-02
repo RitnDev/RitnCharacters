@@ -1,8 +1,12 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.4.0
+Version: 1.4.1
 Date: 02.11.2024
   Changes:
     - Passage en 2.0.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+Date: 02.11.2024
+  Changes:
     - Variable "global" -> "storage".
     - data.lua : shortcut - modification de la gestion d'icon pour le raccourcis.
   Fixes:
