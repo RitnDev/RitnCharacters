@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+Date: 02.11.2024
+  Changes:
+    - Passage en 2.0.
+    - Variable "global" -> "storage".
+    - data.lua : shortcut - modification de la gestion d'icon pour le raccourcis.
+  Fixes:
+    - Gestion de l'inventaire lors du changement de personnage (logistic ignore).
+    - core.lualib.event_handler : on_init, on_configuration_changed passe dans le module désormais.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.0
 Date: 26.06.2024
   Changes:

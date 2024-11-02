@@ -3,8 +3,8 @@
 
 
 local function on_player_created(e) 
-    if global.characters.modules.player.complete == false then return end
-    if global.characters.modules.player.on_player_created == false then return end
+    if storage.characters.modules.player.complete == false then return end
+    if storage.characters.modules.player.on_player_created == false then return end
     local rEvent = RitnCoreEvent(e)
     local rPlayer = rEvent:getPlayer()
 
@@ -18,14 +18,14 @@ end
 
 
 local function on_gui_click(e) 
-    if global.characters.modules.player.complete == false then return end
+    if storage.characters.modules.player.complete == false then return end
     RitnGuiCharacterChanger(e):on_gui_click()
 end
 
 
 
 local function on_player_respawned(e)
-    if global.characters.modules.player.complete == false then return end
+    if storage.characters.modules.player.complete == false then return end
     RitnCharacter(RitnCoreEvent(e).player):check()
 end
 

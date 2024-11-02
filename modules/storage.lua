@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------------------------
 -- GLOBALS
 ---------------------------------------------------------------------------------------------
-if global.characters == nil then 
-    global.characters = { 
+if storage.characters == nil then 
+    storage.characters = { 
         modules = {
             player = {
                 on_player_created = true,
@@ -38,13 +38,13 @@ local character_interface = {
 
     --disable modules
     ["disable.module.player"] = function()
-        global.teleporter.modules.player.complete = false
+        storage.teleporter.modules.player.complete = false
     end,
     ["disable.module.on_player_created"] = function()
-        global.teleporter.modules.player.on_player_created = false
+        storage.teleporter.modules.player.on_player_created = false
     end,
     ["disable.module.on_lua_shortcut"] = function()
-        global.teleporter.modules.on_lua_shortcut = false
+        storage.teleporter.modules.on_lua_shortcut = false
     end,
     
     --new character

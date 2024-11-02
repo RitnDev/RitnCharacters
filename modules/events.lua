@@ -23,7 +23,7 @@ local function init_characters()
             end
             name = string.upper(string.sub(name, 1, 1)) .. string.sub(name, 2)
 
-            if global.characters.names[skin] ~= nil then name = global.characters.names[skin] end
+            if storage.characters.names[skin] ~= nil then name = storage.characters.names[skin] end
             if name ~= "" then
                 remote.call("RitnCharacters", "add_character", name, skin)
             end
@@ -60,9 +60,9 @@ local function on_configuration_changed()
         remote.call('RitnCoreGame', "set_enemy", enemy)
     end
     
-    if global.players ~= nil then global = {} end
-    if global.characters == nil then 
-        global.characters = { 
+    if storage.players ~= nil then storage = {} end
+    if storage.characters == nil then 
+        storage.characters = { 
             modules = {
                 player = true,
             },
@@ -77,7 +77,7 @@ local function on_configuration_changed()
         }
     elseif ritnlib.defines.characters.version == "1.2.6" then 
         log('>>> Migration mod RitnCharacters_1.2.6 <<<')
-        global.characters = { 
+        storage.characters = { 
             modules = {
                 player = {
                     on_player_created = true,
@@ -100,14 +100,16 @@ end
 
 
 local function on_lua_shortcut(e) 
-    if global.characters.modules.on_lua_shortcut == false then return end
+    if storage.characters.modules.on_lua_shortcut == false then return end
     RitnGuiCharacterChanger(e):on_lua_shortcut()
 end
+
+
 -------------------------------------------
-script.on_init(on_init_mod)
-script.on_configuration_changed(on_configuration_changed)
+local module = { events = {} }
 -------------------------------------------
-local events = { events = {} }
-events.events[defines.events.on_lua_shortcut] = on_lua_shortcut
+module.on_init = on_init_mod
+module.on_configuration_changed = on_configuration_changed
+module.events[defines.events.on_lua_shortcut] = on_lua_shortcut
 -------------------------------------------
-return events
+return module

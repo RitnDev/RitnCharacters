@@ -72,7 +72,7 @@ function RitnGuiCharacterChanger:create()
     content.flow.dialog =           content.flow.selecter.add(element.flow.dialog)
     -- button request
     content.button.select =         content.flow.dialog.add(element.button.select)
- 
+
 
     -- styles guiElement
     content.label.current.caption = {"frame-changer.label-current", character.name}
@@ -151,7 +151,3 @@ function RitnGuiCharacterChanger:action_select()
     return self
 end
 
-
-
-----------------------------------------------------------------
---return RitnGuiCharacterChanger

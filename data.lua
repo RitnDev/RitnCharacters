@@ -13,7 +13,10 @@ local shortcut = {
     type = "shortcut",
     name = ritnlib.defines.characters.names.shortcut,
     action = "lua",
-    icon = sprite_icon_shortcut,
+    icon = ritnlib.defines.characters.graphics.shortcut,
+    icon_size = 64,
+    small_icon = ritnlib.defines.characters.graphics.shortcut,
+    small_icon_size = 64,
     toggleable = true,
 }
 -- activate shortcut

@@ -2,7 +2,7 @@ local modules = {}
 ------------------------------------------------------------------------------
 
 -- Inclus les events onInit et onLoad + les ajouts de commandes
-modules.globals =               require(ritnlib.defines.characters.modules.globals)
+modules.storage =               require(ritnlib.defines.characters.modules.storage)
 modules.events =                require(ritnlib.defines.characters.modules.events)
 
 ---- Modules désactivable

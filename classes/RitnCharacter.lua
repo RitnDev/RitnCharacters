@@ -30,10 +30,10 @@ function RitnCharacter:change(index_character)
     data_character.character_health_bonus = self.character.character_health_bonus
     data_character.character_inventory_slots_bonus = self.character.character_inventory_slots_bonus
     data_character.character_item_drop_distance_bonus = self.character.character_item_drop_distance_bonus
+    data_character.character_item_pickup_distance_bonus = self.character.character_item_pickup_distance_bonus
     data_character.character_loot_pickup_distance_bonus = self.character.character_loot_pickup_distance_bonus
     data_character.character_maximum_following_robot_count_bonus = self.character.character_maximum_following_robot_count_bonus
     data_character.character_mining_speed_modifier = self.character.character_mining_speed_modifier
-    data_character.character_personal_logistic_requests_enabled = self.character.character_personal_logistic_requests_enabled
     data_character.character_reach_distance_bonus = self.character.character_reach_distance_bonus
     data_character.character_resource_reach_distance_bonus = self.character.character_resource_reach_distance_bonus
     data_character.character_running_speed_modifier = self.character.character_running_speed_modifier
@@ -48,10 +48,10 @@ function RitnCharacter:change(index_character)
     self.player.character.character_health_bonus = data_character.character_health_bonus
     self.player.character.character_inventory_slots_bonus = data_character.character_inventory_slots_bonus
     self.player.character.character_item_drop_distance_bonus = data_character.character_item_drop_distance_bonus
+    self.player.character.character_item_pickup_distance_bonus = data_character.character_item_pickup_distance_bonus
     self.player.character.character_loot_pickup_distance_bonus = data_character.character_loot_pickup_distance_bonus
     self.player.character.character_maximum_following_robot_count_bonus = data_character.character_maximum_following_robot_count_bonus
     self.player.character.character_mining_speed_modifier = data_character.character_mining_speed_modifier
-    self.player.character.character_personal_logistic_requests_enabled = data_character.character_personal_logistic_requests_enabled
     self.player.character.character_reach_distance_bonus = data_character.character_reach_distance_bonus
     self.player.character.character_resource_reach_distance_bonus = data_character.character_resource_reach_distance_bonus
     self.player.character.character_running_speed_modifier = data_character.character_running_speed_modifier
