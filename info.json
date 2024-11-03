@@ -1,12 +1,12 @@
 {
   "name": "RitnCharacters",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "title": "RitnCharacters",
   "author": "Ritn",
   "description": "Change your character ! // Changer votre personnage !",
   "factorio_version": "2.0",
   "dependencies":[
     "base",
-    "RitnBaseGame >= 0.5"
+    "RitnBaseGame >= 0.6"
 	]
 }

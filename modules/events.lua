@@ -8,25 +8,24 @@ local function init_characters()
     remote.call("RitnCoreGame", "set_options", options)
 
     -- add characters on list
-    for _,entity in pairs(game.entity_prototypes) do
-        if entity.type == "character" then 
-            local skin = entity.name
-            local name = string.gsub(entity.name, '-skin', '')
-            name = string.gsub(name, '-', ' ')
-            name = string.gsub(name, '_', ' ')
-            name = string.gsub(name, 'skin', '')
-            name = string.gsub(name, 'character', '')
-            name = string.gsub(name, 'Skin', '')
-            if string.sub(name, 1, string.len("genshinimpact")) == "genshinimpact" then 
-                name = string.gsub(name, 'genshinimpact', '')
-                name = name .. ' (Genshin Impact)'
-            end
-            name = string.upper(string.sub(name, 1, 1)) .. string.sub(name, 2)
+    local characters = prototypes.get_entity_filtered({{filter='type', type="character"}})
+    for _,entity in pairs(characters) do
+        local skin = entity.name
+        local name = string.gsub(entity.name, '-skin', '')
+        name = string.gsub(name, '-', ' ')
+        name = string.gsub(name, '_', ' ')
+        name = string.gsub(name, 'skin', '')
+        name = string.gsub(name, 'character', '')
+        name = string.gsub(name, 'Skin', '')
+        if string.sub(name, 1, string.len("genshinimpact")) == "genshinimpact" then 
+            name = string.gsub(name, 'genshinimpact', '')
+            name = name .. ' (Genshin Impact)'
+        end
+        name = string.upper(string.sub(name, 1, 1)) .. string.sub(name, 2)
 
-            if storage.characters.names[skin] ~= nil then name = storage.characters.names[skin] end
-            if name ~= "" then
-                remote.call("RitnCharacters", "add_character", name, skin)
-            end
+        if storage.characters.names[skin] ~= nil then name = storage.characters.names[skin] end
+        if name ~= "" then
+            remote.call("RitnCharacters", "add_character", name, skin)
         end
     end
 end
