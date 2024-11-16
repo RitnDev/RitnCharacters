@@ -92,8 +92,11 @@ end
 
 function RitnCharacter:check()
     if self.character then
-        if self.character.name ~= self:get() then
-            self:change(self.data.character.index)
+        local character = self:get()
+        if character ~= nil then 
+            if self.character.name ~= character then
+                self:change(self.data.character.index)
+            end
         end
     end
 end
