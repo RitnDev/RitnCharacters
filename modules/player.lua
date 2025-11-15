@@ -19,6 +19,13 @@ end
 
 local function on_gui_click(e) 
     if storage.characters.modules.player.complete == false then return end
+    local rEvent = RitnCoreEvent(e)
+    local rPlayer = rEvent:getPlayer()
+    if rPlayer.controller_name ~= "character" then 
+        rPlayer.player.print({'msg.no-character', rPlayer.controller_name})
+        RitnGuiCharacterChanger(e):action_close()
+        return 
+    end
     RitnGuiCharacterChanger(e):on_gui_click()
 end
 
@@ -26,6 +33,7 @@ end
 
 local function on_player_respawned(e)
     if storage.characters.modules.player.complete == false then return end
+    RitnGuiCharacterChanger(e):action_close()
     RitnCharacter(RitnCoreEvent(e).player):check()
 end
 

@@ -135,7 +135,12 @@ function RitnGuiCharacterChanger:action_open()
     return self
 end
 
-function RitnGuiCharacterChanger:action_select() 
+function RitnGuiCharacterChanger:action_select()  
+    if self.controller_name ~= "character" then 
+        self.player.print({'msg.no-character', self.controller_name})
+        self:action_close()
+        return 
+    end
     local list = self:getElement("list")
     ----
     local selected_index = list.selected_index
