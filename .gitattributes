@@ -1,0 +1,4 @@
+.github export-ignore
+tests export-ignore
+docs export-ignore
+.vscode export-ignore
